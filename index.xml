@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+<book>
+    <title>something</title>
+    <author>n.muthukumar</author>
+    <price>3k</price>
+</book>
+<book>
+    <title>something2</title>
+    <author>bala</author>
+    <price>5k</price>
+</book>
+<book>
+    <title>something3</title>
+    <author>inbarasan</author>
+    <price>36k</price>
+</book>
+
+</bookstore>
