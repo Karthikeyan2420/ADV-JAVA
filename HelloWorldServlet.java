@@ -44,6 +44,7 @@ public class HelloWorldServlet extends HttpServlet {
         out.println("<body>");
         out.println("<h1>Hello, World!</h1>");
         out.println("<p>Welcome to the Java Servlet!</p>");
+        out.println("<table border='1'><tr><th>Serial Number</th><th>Full Name</th></tr>");
         
     	 try {
     		
@@ -51,14 +52,17 @@ public class HelloWorldServlet extends HttpServlet {
     		 
              Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "system", "oracle");
             
-             out.println("<h1>something</h1>");
+           
              PreparedStatement stmt = con.prepareStatement("select * from t3");
              ResultSet rs = stmt.executeQuery();
              
-             out.println("<br>");
+             
              while (rs.next()) {
-                 out.println(rs.getInt(1) + " " + rs.getString(2) );
-                 out.println("<br>");
+            	 out.println("<tr><td>");
+                 out.println(rs.getInt(1)+"</td>");
+                 out.println("<td>"+rs.getString(2)+"</td></tr>");
+                 
+                 
              }
          } catch (ClassNotFoundException | SQLException e) {
              e.printStackTrace();
