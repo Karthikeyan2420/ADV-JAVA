@@ -48,7 +48,7 @@ public class login extends HttpServlet {
 	            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "system", "oracle");
 
 	            // SQL query to insert data
-	            String query = "SELECT * FROM student WHERE id=? AND name=?";
+	            String query = "SELECT * FROM user1 WHERE fn=? AND ps=?";
 	            PreparedStatement statement = con.prepareStatement(query);
 	            statement.setString(1, username);
 	            statement.setString(2, password);
@@ -60,7 +60,7 @@ public class login extends HttpServlet {
 	            if (a) {
 	            	System.out.println("success");
 	                // Create a cookie to store the username
-	                Cookie userCookie = new Cookie("username", password);
+	                Cookie userCookie = new Cookie("username", username);
 	                userCookie.setMaxAge(60 * 60); // Set cookie expiry to 1 hour
 	                response.addCookie(userCookie);
 

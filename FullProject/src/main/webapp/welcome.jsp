@@ -26,7 +26,7 @@
     <%
         } else {
     %>
-            <p>You are not logged in. Please <a href="login.jsp">log in</a>.</p>
+            <p>You are not logged in. Please <a href="login.jsp">log in</a>(or)<a href="Register.jsp">Register</a>.</p>
     <%
         }
     %>
